@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Future Plans for Lost & Found Portal</title>
+    <style>
+      :root {
+        --primary: #4e54c8;
+        --primary-light: #8f94fb;
+        --secondary: #1e90ff;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --success: #28a745;
+        --danger: #dc3545;
+        --warning: #ffc107;
+        --info: #17a2b8;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--light);
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      header {
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-light)
+        );
+        color: white;
+        padding: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: white;
+      }
+
+      .logo span {
+        color: var(--warning);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--warning);
+      }
+
+      .hero {
+        padding: 3rem 0;
+        text-align: center;
+      }
+
+      .hero span {
+        color: var(--warning);
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: white;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .features {
+        padding: 4rem 0;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        color: var(--primary);
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .feature-card {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        text-align: center;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .feature-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+
+      .feature-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--dark);
+      }
+
+      .feature-desc {
+        color: #666;
+      }
+
+      .how-it-works {
+        background-color: rgba(78, 84, 200, 0.05);
+        padding: 4rem 0;
+      }
+
+      .steps {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .step-card {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        min-width: 250px;
+        max-width: 350px;
+        position: relative;
+      }
+
+      .step-number {
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        background: var(--primary);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .step-title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+
+      .cta {
+        padding: 4rem 0;
+        text-align: center;
+      }
+
+      .btn {
+        display: inline-block;
+        background: var(--primary);
+        color: white;
+        padding: 0.8rem 2rem;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      .btn:hover {
+        background: var(--primary-light);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-secondary {
+        background: var(--secondary);
+        margin-left: 1rem;
+      }
+
+      .btn-secondary:hover {
+        background: #1a7fd1;
+      }
+
+      footer {
+        background: var(--dark);
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 1rem 0;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+      }
+
+      .footer-links a:hover {
+        color: white;
+      }
+
+      .copyright {
+        margin-top: 1rem;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .steps {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="logo">Lost &<span>Found</span></div>
+          <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">How It Works</a>
+            <a href="#">Report Lost</a>
+            <a href="#">Report Found</a>
+            <a href="#">Contact</a>
+          </div>
+        </nav>
+        <div class="hero">
+          <h1><span>Future Plans for</span> Lost & Found Portal</h1>
+          <p>
+            Utilizing AI Image Recognition, QR Verification, and Blockchain
+            Technology to securely reconnect people with their lost items
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <section class="features">
+      <div class="container">
+        <h2 class="section-title">Our Advanced Technology</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <h3 class="feature-title">AI Image Identification</h3>
+            <p class="feature-desc">
+              Our advanced AI system can identify lost items from images with
+              remarkable accuracy, matching them with found items in our
+              database. The AI recognizes unique characteristics that might be
+              missed by human observation.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3 class="feature-title">QR Verification</h3>
+            <p class="feature-desc">
+              Each registered item receives a unique QR code that can be
+              attached as a tag. When scanned, it provides instant verification
+              of ownership and contact information for quick return of found
+              items.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⛓️</div>
+            <h3 class="feature-title">Blockchain Security</h3>
+            <p class="feature-desc">
+              All item registrations and ownership claims are securely recorded
+              on blockchain, creating an immutable record that prevents fraud
+              and ensures legitimate returns to rightful owners.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Register Your Items</h3>
+            <p>
+              Upload photos of your valuable items to our secure platform. Our
+              AI creates a unique digital fingerprint for each item, and you'll
+              receive a QR code tag to attach to your belongings.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Report Lost or Found</h3>
+            <p>
+              If you lose an item, report it immediately on our platform. If you
+              find an item, take a photo or scan its QR code to start the return
+              process securely.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Secure Verification</h3>
+            <p>
+              Our blockchain technology verifies ownership claims, and our
+              matching system connects lost items with found reports
+              automatically, protecting privacy while facilitating returns.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2 class="section-title">Start Protecting Your Belongings Today</h2>
+        <p>
+          Join thousands of users who have successfully recovered their lost
+          items
+        </p>
+        <div style="margin-top: 2rem">
+          <a onclick="goBack()" class="btn">Back to Home</a>
+          <a href="/report/report.html" class="btn btn-secondary"
+            >Report an Item</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="logo" style="margin-bottom: 1rem">
+          Lost &<span>Find</span>
+        </div>
+        <div class="footer-links">
+          <a href="#">About Us</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">FAQ</a>
+          <a href="#">Contact</a>
+        </div>
+        <p class="copyright">© 2025 SecureFind. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lost & Found Portal</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container nav-container">
+        <a href="#" class="logo">
+          <i class="fas fa-search-location"></i>
+          Lost & Found
+        </a>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#recent-items">Recent Items</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <a href="/Future/future.html" class="btn btn-primary"
+            >Future Ugrade <i class="fa-regular fa-file"></i
+          ></a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Lost Something? Find it with Us!</h1>
+        <p>
+          Lost & Found is a community-driven platform connecting people who have
+          lost or found items. Our mission is to help reunite people with their
+          belongings and build a more connected community.
+        </p>
+        <div class="hero-buttons">
+          <a href="/Report/report.html" class="btn btn-hero btn-primary"
+            >Report Item</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section" id="how-it-works">
+      <div class="container">
+        <div class="section-title">
+          <h2>How It Works</h2>
+          <p>Simple steps to reunite with your lost items</p>
+        </div>
+        <div class="steps-container">
+          <div class="step-card">
+            <div class="step-icon">
+              <i class="fas fa-edit"></i>
+            </div>
+            <h3>Report Item</h3>
+            <p>
+              Submit a detailed report of your lost item or an item you've
+              found. The more details you provide, the higher the chances of a
+              successful match.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <h3>Find Matches</h3>
+            <p>
+              Our intelligent matching system will search through the database
+              to find potential matches based on location, time, and item
+              description.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-icon">
+              <i class="fas fa-comments"></i>
+            </div>
+            <h3>Connect</h3>
+            <p>
+              Once a potential match is found, we'll help you connect safely
+              with the other party through our secure messaging system.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Items Section -->
+    <section class="section" id="recent-items">
+      <div class="container">
+        <div class="section-title">
+          <h2>Recent Items</h2>
+          <p>Browse all recently reported items here</p>
+        </div>
+
+        <div class="tabs">
+          <div class="tab active" id="tab-report">All Recent Items</div>
+          <div class="tab" id="tab-browse">Lost Items</div>
+          <div class="tab">Found Items</div>
+        </div>
+
+        <!-- Items Grid will be populated by JavaScript -->
+        <div class="items-grid">
+          <!-- Loading placeholder -->
+          <div class="loading-indicator">Loading items...</div>
+        </div>
+
+        <!-- View More Button -->
+        <div class="text-center mt-4">
+          <a href="/report/report.html" class="btn btn-primary"
+            >View All Items</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-col">
+            <h3>Lost & Found</h3>
+            <p>
+              A community-driven lost and found platform helping people reunite
+              with their lost belongings and build a more connected community.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li>
+                <a href="#"><i class="fas fa-chevron-right"></i> Home</a>
+              </li>
+              <li>
+                <a href="#how-it-works"
+                  ><i class="fas fa-chevron-right"></i> How It Works</a
+                >
+              </li>
+              <li>
+                <a href="#recent-items"
+                  ><i class="fas fa-chevron-right"></i> Recent Items</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-chevron-right"></i> FAQs</a>
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right"></i> Terms of Service</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right"></i> Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Contact Us</h3>
+            <ul>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-map-marker-alt"></i> Sunderdeep Engineering
+                  College, Dasna, Uttar Pradesh, India</a
+                >
+              </li>
+              <li>
+                <a href="tel:+11234567890"
+                  ><i class="fas fa-phone"></i> +91 888284XXXX</a
+                >
+              </li>
+              <li>
+                <a href="mailto:info@lostandfound.com"
+                  ><i class="fas fa-envelope"></i> info@pixelpirates08.com</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Newsletter</h3>
+            <p>
+              Subscribe to our newsletter to get the latest updates on lost and
+              found items in your area.
+            </p>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="Your Email"
+              />
+              <button type="submit" class="newsletter-btn">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2025 Lost & Found. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Item Detail Modal will be created by JavaScript -->
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

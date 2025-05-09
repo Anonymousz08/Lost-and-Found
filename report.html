@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lost and Found</title>
+    <link rel="stylesheet" href="report.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="wrapper">
+        <div class="top-bar">
+          <button class="return-btn" onclick="navigateBack()">← Back</button>
+          <div class="site-branding">
+            Lost &<span class="highlight">Found</span>
+          </div>
+        </div>
+        <div class="banner">
+          <h1 class="banner-title">Lost & Found Portal</h1>
+          <p class="banner-text">
+            Fill the Form for Reporting the Lost and Found Items
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="content-header">
+        <h1>Lost and Found</h1>
+        <p>Report lost items or found items to help others</p>
+      </div>
+
+      <div class="tabs">
+        <div class="tab active" id="tab-report">Report Item</div>
+        <div class="tab" id="tab-browse">Browse Items</div>
+      </div>
+
+      <div id="error-container" style="display: none" class="error"></div>
+      <div id="success-container" style="display: none" class="success"></div>
+
+      <div id="report-section">
+        <div class="form-container">
+          <h2>Report an Item</h2>
+          <form id="report-form">
+            <div class="form-group">
+              <label for="item-name">Item Name</label>
+              <input
+                type="text"
+                id="item-name"
+                required
+                placeholder="e.g. iPhone 12, Wallet, Backpack"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="item-status">Status</label>
+              <select id="item-status" required>
+                <option value="lost">Lost</option>
+                <option value="found">Found</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="item-place">Location</label>
+              <input
+                type="text"
+                id="item-place"
+                required
+                placeholder="Where was it lost/found?"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="item-contact">Contact Information</label>
+              <input
+                type="text"
+                id="item-contact"
+                required
+                placeholder="Email or phone number"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="item-description">Description</label>
+              <textarea
+                id="item-description"
+                placeholder="Provide details about the item"
+              ></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn">Submit Report</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="browse-section" style="display: none">
+        <div class="search-container">
+          <input
+            type="text"
+            class="search-input"
+            id="search-input"
+            placeholder="Search items..."
+          />
+          <div class="filters">
+            <select class="filter-select" id="status-filter">
+              <option value="all">All Status</option>
+              <option value="lost">Lost</option>
+              <option value="found">Found</option>
+              <option value="claimed">Claimed</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="items-container" class="items-container">
+          <div class="loading">Loading items...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item Detail Modal -->
+    <div id="item-detail-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="item-detail-container"></div>
+      </div>
+    </div>
+
+    <footer class="page-footer">
+      <div class="wrapper">
+        <div class="site-branding" style="margin-bottom: 1rem">
+          Lost &<span class="highlight">Found</span>
+        </div>
+        <div class="footer-menu">
+          <a href="#">About Us</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">FAQ</a>
+          <a href="#">Contact</a>
+        </div>
+        <p class="footer-text">© 2025 SecureFind. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      function navigateBack() {
+        window.history.back();
+      }
+    </script>
+
+    <script type="module" src="report.js"></script>
+  </body>
+</html>
